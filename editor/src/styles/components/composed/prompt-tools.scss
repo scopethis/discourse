@@ -1,0 +1,29 @@
+@use '../../core/type';
+
+.tool-container {
+  position: relative;
+  height: 50px;
+}
+
+.prompt-tools {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  > button {
+    margin-right: 1px;
+  }
+}
+
+.response-count {
+  @include type.default();
+}
+
+.response-tool-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag-list {
+  margin-top: 5px;
+}

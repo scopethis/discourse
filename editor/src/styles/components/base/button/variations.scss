@@ -1,0 +1,75 @@
+@use '../../../core/colour';
+@use '../../../core/type';
+
+
+$default: (
+  bg: colour.$neutralBright,
+  bgHover: colour.$neutral,
+  txt: colour.$neutralDarker,
+  txtHover: colour.$neutralDarker,
+  size: map-get(type.$default, 'size'),
+  vPad: 5px,
+  hPad: 10px
+);
+
+$defaultOn: (
+  bg: colour.$neutralDark,
+  bgHover: colour.$neutralDarker,
+  txt: colour.$neutralBright,
+  txtHover: colour.$neutralBright,
+);
+
+$tag: (
+  size: map-get(type.$small, 'size'),
+  bg: #000000,
+  bgHover: colour.$negativeDark,
+  txt: colour.$neutralBright,
+  txtHover: colour.$neutralBright,
+);
+
+$standard: (
+  size: map-get(type.$default, 'size'),
+  bg: colour.$corporateBright,
+  bgHover: colour.$corporate,
+  txt: #ffffff,
+  txtHover: #ffffff,
+);
+
+$positive: (
+  size: map-get(type.$default, 'size'),
+  bg: colour.$positive,
+  bgHover: colour.$positiveDark,
+  txt: #ffffff,
+  txtHover: #ffffff,
+);
+
+$negative: (
+  size: map-get(type.$default, 'size'),
+  bg: colour.$negative,
+  bgHover: colour.$negativeDark,
+  txt: #ffffff,
+  txtHover: #ffffff,
+);
+
+$white_primary: (
+  bg: colour.$carbon--blue-60,
+  bgHover: colour.$carbon--blue-70,
+  txt: colour.$carbon--white-0,
+  txtHover: colour.$carbon--white-0,
+  size: map-get(type.$default, 'size'),
+  vPad: 5px,
+  hPad: 10px
+);
+
+
+
+$options: (
+  default: $default,
+  defaultOn: map-merge($default, $defaultOn),
+  tag: map-merge($default, $tag),
+  standard: map-merge($default, $standard),
+  positive: map-merge($default, $positive),
+  negative: map-merge($default, $negative),
+  white_primary: $white_primary
+);
+

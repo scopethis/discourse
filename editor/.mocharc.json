@@ -1,0 +1,12 @@
+{
+  "extension": ["ts"],
+  "spec": "src/**/*.spec.ts",
+  "require": "ts-node/register",
+  "delay": false,
+  "bail": false,
+  "watch": true,
+  "watch-files": [
+    "src/**/*.ts"
+  ],
+  "reporter": "spec"
+}

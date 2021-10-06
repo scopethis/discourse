@@ -1,0 +1,32 @@
+@import '../../../node_modules/@carbon/colors/scss/colors';
+// @include carbon--colors();
+
+$positiveBright: lighten(#27AE60, 20%);
+$positive: #27AE60;
+$positiveDark: darken(#27AE60, 20%);
+$positiveDarker: darken(#27AE60, 40%);
+
+$negativeBright: lighten(#EB5757, 20%);
+$negative: #EB5757;
+$negativeDark: darken(#EB5757, 20%);
+$negativeDarker: darken(#EB5757, 20%);
+
+$neutralBright: lighten(#BDBDBD, 20%);
+$neutral: #BDBDBD;
+$neutralDark: darken(#BDBDBD, 20%);
+$neutralDarker: darken(#BDBDBD, 40%);
+
+$corporateBright: lighten(#0051BE, 20%);
+$corporate: #0051BE;
+$corporateDark: darken(#0051BE, 20%);
+$corporateDarker: darken(#0051BE, 20%);
+
+$eveningBright: lighten(#01045C, 20%);
+$evening: #01045C;
+$eveningDark: darken(#01045C, 20%);
+$eveningDarker: darken(#01045C, 20%);
+
+$action: #2D9CDB;
+
+// $blue: map-get($carbon--colors, 'blue');
+// $interactive-01: map-get($blue, '10')

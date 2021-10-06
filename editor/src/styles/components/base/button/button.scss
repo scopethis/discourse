@@ -1,0 +1,126 @@
+@use './variations';
+@use '../../../core/reset';
+@use '../../../core/utils';
+
+@mixin button () {
+  @include reset.button();
+  display: flex;
+  align-items: center;
+}
+
+@mixin solid ($type: 'default') {
+  $props: map-get(variations.$options, $type);
+
+  font-size: map-get($props, 'size');
+  color:  map-get($props, 'txt');
+
+  background-color: map-get($props, 'bg');
+  &:hover {
+    background-color: map-get($props, 'bgHover');
+    color:  map-get($props, 'txtHover');
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  padding-top: map-get($props, 'vPad');
+  padding-bottom: map-get($props, 'vPad');
+
+  padding-left: map-get($props, 'hPad');
+  padding-right: map-get($props, 'hPad');
+}
+
+@mixin withIconOnLeft () {
+  flex-direction: row;
+  >[class*="icon"] {
+    margin-right: 5px;
+  }
+}
+
+@mixin withIconOnRight () {
+  flex-direction: row-reverse;
+  >[class*="icon"] {
+    margin-left: 5px;
+  }
+}
+
+@mixin iconPlacement() {
+  &[class*="iconOnRight"] {
+    @include withIconOnRight();
+  }
+  &[class*="iconOnLeft"] {
+    @include withIconOnLeft();
+  }
+}
+
+
+.button {
+  @include button();
+  @include iconPlacement();
+
+  &[class*="default"] {
+    &[class~="on"] {
+      @include solid('defaultOn');
+    }
+    &[class~="off"] {
+      @include solid('default');
+    }
+  }
+}
+
+.tag {
+  @include button();
+  @include iconPlacement();
+  display: inline-flex;
+  @include utils.roundedCorners();
+
+  // Themes
+  &[class*="default"] {
+    @include solid('tag');
+  }
+}
+
+.standard {
+  @include button();
+  @include iconPlacement();
+  display: inline-flex;
+
+  // Themes
+  &[class*="default"] {
+    @include solid('standard');
+  }
+  &[class*="positive"] {
+    @include solid('positive');
+  }
+  &[class*="negative"] {
+    @include solid('negative');
+  }
+  &[class*="white"] {
+    &[class*="primary"] {
+      @include solid('white_primary');
+    }
+  }
+  height: 36px;
+}
+
+.tool {
+  @include button();
+  @include iconPlacement();
+  display: inline-flex;
+
+  // Themes
+  &[class*="default"] {
+    @include solid('default');
+  }
+  &[class*="positive"] {
+    @include solid('positive');
+  }
+  &[class*="negative"] {
+    @include solid('negative');
+  }
+  width: 36px;
+  height: 36px;
+}
+
+

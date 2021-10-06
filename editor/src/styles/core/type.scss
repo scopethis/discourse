@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap');
+
+$family: 'IBM Plex Sans', sans-serif;
+
+$default: (
+  size: 16px,
+  family: $family,
+  weight: 300
+);
+
+$small: (
+  size: 14px,
+  family: $family,
+  weight: 300
+);
+
+@mixin default() {
+  font-size: map-get($default, 'size');
+  font-family: map-get($default, 'family');
+  font-weight: map-get($default, 'weight');
+}
+
+@mixin small() {
+  font-size: map-get($small, 'size');
+  font-family: map-get($small, 'family');
+  font-weight: map-get($small, 'weight');
+}

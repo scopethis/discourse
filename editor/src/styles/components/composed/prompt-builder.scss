@@ -1,0 +1,54 @@
+$hPad: 20px;
+$vPad: 20px;
+
+.prompt-builder {
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.tools {
+  padding-left: $hPad;
+  padding-right: $hPad;
+  background-color: #EDEDED;
+}
+
+.response-tools {
+  padding-left: $hPad;
+  padding-right: $hPad;
+  padding-top: $hPad/2;
+  background-color: #C4C4C4;
+}
+
+.prompt {
+  padding-top: $vPad;
+  padding-bottom: $vPad/2;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.tags {
+  padding-top: $vPad/2;
+  padding-bottom: $vPad;
+}
+
+.content {
+  width: 100%;
+  padding-left: $hPad;
+  padding-right: $hPad;
+}
+
+.cancel-change {
+  position: absolute;
+  right: $hPad;
+  bottom: 0;
+  left: $hPad;
+  z-index: 1;
+}
+
+.save-change {
+  position: absolute;
+  right: $hPad;
+  bottom: 0;
+  left: 56px;
+  z-index: 1;
+}

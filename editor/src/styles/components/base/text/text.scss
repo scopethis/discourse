@@ -1,0 +1,57 @@
+@use '../../../core/type';
+
+// https://css-tricks.com/auto-growing-inputs-textareas/
+@mixin inputSizer() {
+  display: inline-grid;
+  vertical-align: top;
+  align-items: stretch;
+  position: relative;
+  width: 100%;
+
+  &::after,
+  textarea {
+    width: auto;
+    min-width: 1em;
+    grid-area: 1 / 1;
+    @include type.small();
+    margin: 0;
+    resize: none;
+    background: none;
+    appearance: none;
+    border: none;
+  }
+
+  &::after {
+    content: attr(data-value) ' ';
+    visibility: hidden;
+    white-space: pre-wrap;
+  }
+}
+
+@mixin default() {
+  @include type.small();
+  width: 100%;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.text-wrapper {
+  @include inputSizer();
+  padding: 10px;
+  background-color: #FFFFFF;
+  &[class~="editing"] {
+    background-color: #F1FCFF;
+  }
+}
+
+.textarea {
+  &[class*="default"] {
+    @include default();
+    pointer-events: none;
+    overflow: hidden;
+  }
+  &[class~="editing"] {
+    pointer-events: all;
+  }
+}

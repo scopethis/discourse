@@ -1,0 +1,19 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+body * {
+  margin: 0;
+  padding: 0;
+}
